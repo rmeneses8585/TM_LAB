@@ -32,8 +32,7 @@ jobs:
         env:
           API_KEY_RM: ${{ secrets.API_KEY_RM }}
         run: |
-          ./tmas scan <artifact to scan> -VMS --saveSBOM > results.json --override overrides.yml
-
+          ./tmas scan docker:Artifact Scanner:latest -VMS --saveSBOM > results.json --override overrides.yml
   
       # Runs a single command using the runners shell
       - name: Run a one-line script
