@@ -24,7 +24,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
+      - name: Download Artifact Scanner
+        run: |
+          wget https://cli.artifactscan.cloudone.trendmicro.com/tmas-cli/latest/tmas-cli_Linux_x86_64.tar.gz
+          tar -xzvf tmas-cli_Linux_x86_64.tar.gz
+  
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
