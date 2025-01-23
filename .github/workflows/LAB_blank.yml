@@ -27,6 +27,13 @@ jobs:
       - name: Download Artifact Scanner
         run: |
           wget https://cli.artifactscan.cloudone.trendmicro.com/tmas-cli/latest/tmas-cli_Windows_x86_64.zip
+
+ - name: Image Scanning
+        env:
+          API_KEY_RM: ${{ secrets.API_KEY_RM }}
+        run: |
+          ./tmas scan docker:workshop-container:latest -VMS --saveSBOM > results.json --override overrides.yml
+
   
       # Runs a single command using the runners shell
       - name: Run a one-line script
