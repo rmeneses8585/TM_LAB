@@ -26,7 +26,7 @@ jobs:
   
       - name: Image Scanning
         env:
-          API_KEY_RM: ${{ secrets.API_KEY_RM }}
+          TMAS_API_KEY: ${{ secrets.TMAS_API_KEY}}
         run: |
           ./tmas scan docker:workshop-container:latest -VMS --saveSBOM > results.json --override overrides.yml
   
