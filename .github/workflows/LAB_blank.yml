@@ -32,7 +32,7 @@ jobs:
         env:
           API_KEY_RM: ${{ secrets.API_KEY_RM }}
         run: |
-          ./tmas scan docker:workshop-container:latest -VMS --saveSBOM > results.json --override overrides.yml
+          ./tmas scan docker:rmeneses8585/TM_LAB:latest -VMS --saveSBOM > results.json --override overrides.yml
 
   
       # Runs a single command using the runners shell
